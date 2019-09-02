@@ -36,10 +36,11 @@ class SharpeHyperOptLoss(IHyperOptLoss):
         expected_yearly_return = total_profit.sum() / days_period
 
         if (np.std(total_profit) != 0.):
-            sharp_ratio = expected_yearly_return / np.std(total_profit) * np.sqrt(365)
+            # sharpe ratio formula
+            sharpe_ratio = expected_yearly_return / np.std(total_profit) * np.sqrt(365)
         else:
             # Define high (negative) sharpe ratio to be clear that this is NOT optimal.
-            sharp_ratio = -20.
+            sharpe_ratio = -20.
 
         # print(expected_yearly_return, np.std(total_profit), sharp_ratio)
-        return -sharp_ratio
+        return -sharpe_ratio
