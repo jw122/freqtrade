@@ -7,6 +7,7 @@ config*.json
 logfile.txt
 hyperopt_trials.pickle
 user_data/*
+!user_data/strategies
 !user_data/notebooks
 user_data/notebooks/*
 !user_data/notebooks/*example.ipynb
